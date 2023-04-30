@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
-#a script print time 10 else string and more conditions in a bucle
-n=1
-while [ "$n" -le 10 ]
+#loops from 1 to 10 and displays bad luck for the 4th loop iteration, displays good luck for the 8th loop iteration, displays Best School for the other iterations
+
+i=1
+while [ $i -le 10 ]
 do
-	if [ $n == 4 ]
-	then
-		echo "bad luck"
-	elif [ $n == 8 ]
-	then
-		echo "good luck"
-	else
-		echo "Holberton School"
-	fi
-	((n++))
+    if [ $i -eq 4 ]
+        then echo "bad luck"
+    elif [ $i -eq 8 ]
+        then echo "good luck"
+    else
+        echo "Best School"
+    fi
+    ((i++))
 done

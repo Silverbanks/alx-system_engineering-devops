@@ -3,21 +3,21 @@
 # print FizzBuzz when the number is a multiple of 3 and 5
 # print Fizz when the number is multiple of 3
 # print  Buzz when the number is a multiple of 5
+#Otherwise, prints the number
+#In a list format
 
-count=1
-while [ "$count" -lt 101 ]
+for ((i = 1; i <= 100; i++))
 do
-    if [ $((count%15)) = 0 ]
-    then
-        echo "FizzBuzz"
-    elif [ $((count%3)) = 0 ]
-    then
-        echo "Fizz"
-    elif [ $((count%5)) = 0 ]
-    then
-        echo "Buzz"
-    else
-            echo "$count"
-    fi
-((count++))
+	if [ $((i % 3)) -eq 0 ] && [ $((i % 5)) -eq 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ $((i % 3)) -eq 0 ]
+	then
+		echo "Fizz"
+	elif [ $((i % 5)) -eq 0 ]
+	then
+		echo "Buzz"
+	else
+		echo "$i"
+	fi
 done

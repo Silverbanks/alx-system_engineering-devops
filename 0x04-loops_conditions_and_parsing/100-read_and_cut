@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# this scrip displays username, user id and home directory
+#this script displays username, user id and home directory
 # of the  /etc/passwd.
 
 filename="/etc/passwd"

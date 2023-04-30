@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-#script Bash that print of file whith ls in bucle
-for files in *
+##displays the content of the current directory, in a list format, where only the part of the name after the first dash is displayed.
+
+for i in *
 do 
-    echo "$files" | cut -d'-' -f2
+    echo "$i" | cut -d '-' -f2
 done
