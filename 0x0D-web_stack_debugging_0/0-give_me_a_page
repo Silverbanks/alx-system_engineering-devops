@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Script that turns on an Apache Server
 
-/etc/init.d/apache2 start
+sudo /etc/init.d/apache2 start

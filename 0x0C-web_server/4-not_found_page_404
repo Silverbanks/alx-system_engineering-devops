@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install NGINX server, set mensaje and redirection the server
+# Bash script that installs nginx on an ubuntu machine
 
 apt-get -y update
 apt-get -y install nginx
