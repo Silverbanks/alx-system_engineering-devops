@@ -2,16 +2,21 @@
 # Install and configure HAProxy load balancer
 
 sudo apt-get -y update
-sudo apt-get install -y haproxy
+sudo apt-get install -y haproxy=1.6.\*
+
+sudo sed -i "s/ENABLED=0/ENABLED=1/g" /etc/default/haproxy
 
 # Configure haproxy configuration file to distribute requests using a roundrobin algorithm
 echo '
 frontend silverbanks.tech
-        bind 0:80
+        bind *:80
+	mode http
+	server 85367-lb-01 100.25.177.24:80
         default_backend web_servers
 
 backend web_servers
         balance roundrobin
+	mode http
         server 85367-web-01 54.210.142.210:80
         server 85367-web-02 54.165.19.82:80
 ' >> /etc/haproxy/haproxy.cfg
