@@ -3,7 +3,7 @@
 import requests
 
 
-def count_words(subreddit, word_list):
+def count_words(subreddit, dictionary, after=None):
     """Prints counts of given words found in hot posts of a given subreddit.
     Args:
         subreddit (str): The subreddit to search.
@@ -12,9 +12,11 @@ def count_words(subreddit, word_list):
         after (str): The parameter for the next page of the API results.
         count (int): The parameter of results matched thus far.
     """
+
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
+    u_agent = 'Mozilla/5.0'
     headers = {
-        "User-Agent": "u_agent"
+        'User-Agent': u_agent
     }
     params = {
         "after": after,
